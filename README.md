@@ -1,4 +1,9 @@
-# Vibe Engineering Workflow — an AI coding setup where the human owns decisions
+# Vibe Engineering Workflow — an AI coding agent workflow with AGENTS.md (OpenCode & Claude Code)
+
+**Vibe Engineering** is an AI coding workflow where the agent plans from the real code, a human approves the plan, and the agent implements only that plan, then verifies and updates the project context.
+
+📝 Full write-up: [I stopped prompting my AI agent. I started giving it a workflow.](https://www.linkedin.com/pulse/i-stopped-prompting-my-ai-agent-started-giving-workflow-ahmed-nasser-cbuyf/)
+💡 Core idea from [JavaScript Mastery](https://www.youtube.com/@javascriptmastery); extended here with approval gates, saved plans, read-only reviewers and on-demand skills.
 
 A ready-to-copy template for running an AI coding agent (OpenCode, also readable by Claude Code) on a real product codebase **without losing control of architecture**.
 
