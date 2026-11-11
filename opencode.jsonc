@@ -1,0 +1,46 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // Always-loaded instructions. Keep this list SHORT: every file here costs
+  // tokens on every request. Everything else is loaded on demand via skills.
+  "instructions": ["AGENTS.md", "context/project-map.md"],
+
+  "mcp": {
+    // Current library docs instead of training-data memory.
+    "context7": {
+      "type": "local",
+      "command": ["npx", "-y", "@upstash/context7-mcp"],
+      "enabled": true
+    }
+  },
+
+  "permission": {
+    "read": {
+      "*": "allow",
+      // Secrets are never read by the agent. Use .env.example.
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "edit": {
+      "*": "ask",
+      "prompts/**": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "pnpm typecheck*": "allow",
+      "pnpm lint*": "allow",
+      "pnpm test*": "allow",
+      // Publishing is a human action.
+      "git commit*": "ask",
+      "git push*": "deny"
+    },
+    "skill": "allow",
+    "external_directory": "ask"
+  }
+}
